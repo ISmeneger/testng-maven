@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 public class FractionTest {
     @Test(description = "Сложение двух положительных дробных чисел")
     @Tag("Smoke")
-    void simpleFraction() {
+    public void simpleFraction() {
         Fraction first = new Fraction(1, 2);
         Fraction second = new Fraction(2, 3);
         Fraction expectedSum = new Fraction(7, 6);;
@@ -14,7 +14,7 @@ public class FractionTest {
 
     @Test(description = "Сложение отрицательных дробных чисел")
     @Tag("Smoke")
-    void negativeFraction() {
+    public void negativeFraction() {
         Fraction first = new Fraction(1, 2);
         Fraction second = new Fraction(-2, 3);
         Fraction expectedSum = new Fraction(-1, 6);
@@ -23,7 +23,7 @@ public class FractionTest {
 
     @Test(description = "Нулевой числитель")
     @Tag("Negative")
-    void zeroNumFraction() {
+    public void zeroNumFraction() {
         Fraction first = new Fraction(1, 2);
         Fraction second = new Fraction(-2, 4);
         Fraction expectedSum = new Fraction(0, 8);

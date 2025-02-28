@@ -16,36 +16,34 @@
 
     <build>
         <plugins>
-            <!-- Плагин для выполнения тестов TestNG -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M5</version>
+                <version>3.0.0-M7</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/${suite}.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
-
-            <!-- Плагин для генерации отчетов Allure -->
             <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
-                <version>2.15.2</version> <!-- Версия Allure плагина: https://mvnrepository.com/artifact/io.qameta.allure/allure-maven/ -->
+                <version>2.15.2</version>
+                <configuration>
+                    <reportVersion>2.29.1</reportVersion>
+                </configuration>
             </plugin>
         </plugins>
     </build>
+
     <dependencies>
-        <!-- Зависимость для TestNG: https://mvnrepository.com/artifact/org.testng/testng/ -->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>7.11.0</version>
             <scope>test</scope>
         </dependency>
-
-        <!-- Зависимость для Allure TestNG: https://mvnrepository.com/artifact/io.qameta.allure/allure-testng/ -->
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-testng</artifactId>
